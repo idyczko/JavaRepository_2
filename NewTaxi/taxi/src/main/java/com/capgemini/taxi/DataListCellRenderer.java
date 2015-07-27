@@ -13,10 +13,11 @@ public class DataListCellRenderer extends DefaultListCellRenderer {
 		if (value instanceof Data) {
 			Data data = (Data) value;
 			Position userPosition = new Position(5, 2);
-			setText(String.valueOf(data.getId()) + String.valueOf(data.getPosition().distance(userPosition)));
+			setText("Taxi no. " + String.valueOf(data.getId()) + " is "
+					+ String.valueOf(data.getPosition().distance(userPosition)) + " meters away.");
 			setToolTipText(String.valueOf(data.getId()) + String.valueOf(data.getPosition().distance(userPosition)));
 			// setIcon(ingredient.getIcon());
-			setFont(new Font("Serif", Font.BOLD, 34));
+			setFont(new Font("Serif", Font.BOLD, 16));
 		}
 		return this;
 	}

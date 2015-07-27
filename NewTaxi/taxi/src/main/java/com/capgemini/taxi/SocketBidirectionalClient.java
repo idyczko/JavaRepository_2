@@ -57,7 +57,7 @@ public class SocketBidirectionalClient {
 	public static void main(String arg[]) {
 		// Creating a SocketClient object, IP instead of localhost
 		SocketBidirectionalClient client = new SocketBidirectionalClient("localhost", 9991);
-/*		EventQueue.invokeLater(new Runnable() {
+		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					UserInterface window = new UserInterface();
@@ -66,7 +66,7 @@ public class SocketBidirectionalClient {
 					e.printStackTrace();
 				}
 			}
-		});*/
+		});
 		try {
 			// trying to establish connection to the server
 			client.connect();
