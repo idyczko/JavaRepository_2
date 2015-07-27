@@ -40,6 +40,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 public class UserInterface {
 
@@ -47,6 +48,7 @@ public class UserInterface {
 	private JPopupMenu popup;
 	final DefaultListModel model = new DefaultListModel();
 	final JList list = new JList(model);
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -219,8 +221,11 @@ public class UserInterface {
 		});
 
 		exitButton.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent event) {
-				System.exit(0);
+				int i = Integer.parseInt(textField.getText());
+				System.out.println(i);
+				// System.exit(0);
 			}
 		});
 
@@ -263,6 +268,12 @@ public class UserInterface {
 		// scrollPane.getViewport().add(list);
 		scrollPane.setBounds(161, 259, 146, -59);
 		frame.getContentPane().add(scrollPane);
+
+		textField = new JTextField();
+		textField.setBounds(25, 57, 116, 22);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		// int i = Integer.parseInt(str);
 		lbl.setVisible(true);
 		slider.addChangeListener(new ChangeListener() {
 
